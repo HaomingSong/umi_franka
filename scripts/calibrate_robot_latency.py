@@ -22,7 +22,7 @@ from matplotlib import pyplot as plt
 
 # %%
 @click.command()
-@click.option('-rh', '--robot_hostname', default='172.16.0.3')
+@click.option('-rh', '--robot_hostname', default='10.6.8.85')
 @click.option('-f', '--frequency', type=float, default=30)
 def main(robot_hostname, frequency):
     max_pos_speed = 0.5

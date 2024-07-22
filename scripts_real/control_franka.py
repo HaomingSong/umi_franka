@@ -2,10 +2,10 @@
 import sys
 import os
 
-# ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
-# print(ROOT_DIR)
-# sys.path.append(ROOT_DIR)
-# os.chdir(ROOT_DIR)
+ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+print(ROOT_DIR)
+sys.path.append(ROOT_DIR)
+os.chdir(ROOT_DIR)
 
 # %%
 import click
@@ -24,7 +24,7 @@ from umi.real_world.franka_interpolation_controller import FrankaInterpolationCo
 
 # %%
 @click.command()
-@click.option('-rh', '--robot_hostname', default='172.16.0.3')
+@click.option('-rh', '--robot_hostname', default='10.6.8.85')
 @click.option('-gh', '--gripper_hostname', default='172.24.95.27')
 @click.option('-gp', '--gripper_port', type=int, default=1000)
 @click.option('-f', '--frequency', type=float, default=30)
