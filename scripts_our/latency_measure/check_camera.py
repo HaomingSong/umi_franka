@@ -7,15 +7,12 @@ if __name__ == "__main__":
     camera_ids = list(multi_camera.cameras.keys())
     
     while True:
-            # Get img info
-        images = multi_camera.get_frame()
-        rgbs = []
-        for camera_id in camera_ids:
-            rgb, depth = images[camera_id]
-            rgbs.append(rgb)
-        
-        cv2.imshow("rgb", np.hstack(rgbs))
-        cv2.waitKey(1)
-        
-        time.sleep(0.1)
+            images = multi_camera.get_frame()
+            rgb, depth = images["213522070137"]
+            recv_time = time.time_ns()            
+            # cv2.imshow("rgb", np.hstack([rgb, mask_frame]))
+            cv2.imshow("rgb", rgb)
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):  # 如果按下 'q' 键则退出循环
+                break
         
